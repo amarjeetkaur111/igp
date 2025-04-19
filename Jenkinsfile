@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     environment {
-        MAVEN_HOME = '/usr/bin/mvn' // adjust path if needed
+        MAVEN_HOME = '/opt/maven/current'
+		PATH = "${MAVEN_HOME}/bin:${env.PATH}"
     }
 
     stages {
