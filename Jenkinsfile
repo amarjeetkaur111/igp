@@ -44,7 +44,6 @@ pipeline {
 				sh """
 					cp /var/lib/jenkins/workspace/$JOB_NAME/target/ABCtechnologies-1.0.war abc_tech.war	
 					docker build -t $DOCKER_IMAGE:$DOCKER_TAG .
-					echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
 					docker push $DOCKER_IMAGE:$DOCKER_TAG
 				"""
 				}
