@@ -49,6 +49,14 @@ pipeline {
 				}
 			}
     	}
+		stage('Deploy to Kubernetes') 
+		{
+            steps {
+                sh 'kubectl apply -f deploy.yaml || kubectl replace -f deploy.yaml'
+                sh 'kubectl apply -f svc.yaml || kubectl replace -f svc.yaml'
+            }
+        }
+
     }
 
     post {
