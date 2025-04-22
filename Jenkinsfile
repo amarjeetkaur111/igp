@@ -52,8 +52,8 @@ pipeline {
 		stage('Deploy to Kubernetes') 
 		{
             steps {
-                sh 'kubectl apply -f /k8s/deploy.yaml || kubectl replace -f /k8s/deploy.yaml'
-                sh 'kubectl apply -f /k8s/svc.yaml || kubectl replace -f /k8s/svc.yaml'
+                sh 'kubectl apply -f k8s/deploy.yaml || kubectl replace -f k8s/deploy.yaml'
+                sh 'kubectl apply -f k8s/svc.yaml || kubectl replace -f k8s/svc.yaml'
             }
         }
 
