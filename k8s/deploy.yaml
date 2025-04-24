@@ -17,7 +17,6 @@ spec:
           image: amarjeetkaur111/igp-cicd:latest
           ports:
             - containerPort: 8080
-              hostPort:      30080
           resources:
             limits:
               memory: "512Mi"
