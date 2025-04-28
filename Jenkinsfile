@@ -42,7 +42,7 @@ pipeline {
 			steps {
 				withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
 				sh """
-					cp /var/lib/jenkins/workspace/$JOB_NAME/target/ABCtechnologies-1.0.war abc_tech.war	
+					cp /var/lib/jenkins/workspace/$JOB_NAME/target/ABCtechnologies-1.0.war target/abc.war	
 					docker build -t $DOCKER_IMAGE:$DOCKER_TAG .
 					docker push $DOCKER_IMAGE:$DOCKER_TAG
 				"""
